@@ -30,12 +30,10 @@ public class ModelManager extends ComponentManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
     private static final String CALENDAR_SOURCE_NAME  = "Celeb Calendar Source";
-    private static final String DEFAULT_CALENDAR_NAME = "Default Calendar";
 
     private final AddressBook addressBook;
     private final FilteredList<Person> filteredPersons;
     private final CalendarSource celebCalendarSource;
-    private final Calendar defaultCalendar;
 
     private String currentCelebCalendarViewPage;
 
@@ -52,10 +50,8 @@ public class ModelManager extends ComponentManager implements Model {
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
         celebCalendarSource = new CalendarSource(CALENDAR_SOURCE_NAME);
         initializeCalendarSource(celebCalendarSource);
-        defaultCalendar = new Calendar(DEFAULT_CALENDAR_NAME);
-        currentCelebCalendarViewPage = "day";
 
-        celebCalendarSource.getCalendars().addAll(defaultCalendar);
+        currentCelebCalendarViewPage = "day";
     }
 
     public ModelManager() {
