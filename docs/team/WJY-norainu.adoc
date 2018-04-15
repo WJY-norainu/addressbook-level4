@@ -97,6 +97,54 @@ Examples:
 * `viewCalendar 1` +
 Changes to view the calendar of the 1st person in the last shown person list, if he/she is a celebrity.
 
+==== Changing the calendar view type: `viewCalendarBy` [Since v1.3]
+
+Changes the calendar view to a different one specified by the user. +
+Alias: `vcb` +
+Format: `viewCalendarBy VIEW`
+
+****
+* Changes the calendar view to the specified `VIEW`.
+* `VIEW` *must be* `day`, `week`, or `month`.
+* `VIEW` is case insensitive, e.g. you can type `viewCalendarBy WeEK` to change to view calendar by week.
+****
+
+[IMPORTANT]
+====
+You may notice that in `month` view, the dates on the calendar are clickable. However, this feature will only be integrated
+into our `v2.0` product and hence you should not click on those dates. If you want to view a certain date's appointments,
+use `viewDate` command. Refer to <<Changing the base date of calendar: `viewDate` [Since v1.5]>> for more information.
+====
+
+Examples:
+
+* `viewCalendarBy day` +
+Changes the calendar view to `day` view that is similar to the figure below.
+
+.State of `CalendarPanel` after executing `viewCalendarBy day`
+image::ViewCalendarByDay.jpg[width=""]
+
+[NOTE]
+====
+CelebManger by default shows calendar in `day` view whenever it gets launched. Hence you need to first change to other
+calendar view before using `viewCalendarBy day`.
+====
+
+
+* `viewCalendarBy week` +
+Changes the calendar view to `week` view that is similar to the figure below.
+The column highlighted in red indicates the current day.
+
+.State of `CalendarPanel` after executing `viewCalendarBy week`
+image::ViewCalendarByWeek.jpg[width=""]
+
+* `viewCalendarBy month` +
+Changes the calendar view to `month` view that is similar to the figure below.
+The box highlighted in red indicates the current day.
+
+.State of `CalendarPanel` after executing `viewCalendarBy month`
+image::ViewCalendarByMonth.jpg[width=""]
+
 ==== Displaying a specific date's calendar: `viewDate` [Since v1.5]
 
 Changes the base date of calendar and displays the calendar by day for the specified `date`.
